@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>freshii</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --primary: #427f3f;
+    }
+
+    /* custom scroll bar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 6px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 6px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+    body {
+      width: 100vw;
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: "Inter", sans-serif;
+      padding: 1rem 2rem;
+    }
+
+    .active {
+      background-color: var(--primary);
+      color: #fff;
+    }
+
+    .active img {
+      width: 100px;
+      padding: 1rem;
+      background-color: #fff;
+      border-radius: 50%;
+    }
+
+    header img {
+      width: 150px;
+    }
+
+    .category-menu {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: scroll;
+      margin: 3rem 0;
+      padding: 1rem 0;
+    }
+
+    .category {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 0.5rem 3rem;
+      border-radius: 4rem;
+      letter-spacing: 8px;
+      box-shadow: 0px 2px 6px -1px #000;
+      cursor: pointer;
+      transition: all 300ms;
+    }
+
+    .category:hover {
+      transform: translateY(-12px);
+    }
+
+    .category img {
+      width: 100px;
+      padding: 1rem;
+      transition: all 300ms;
+    }
+
+    .category:hover img {
+      transform: rotate(22deg);
+    }
+
+    #menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      place-items: center;
+    }
+
+    .menu-item {
+      max-width: 320px;
+      border-radius: 1rem;
+      cursor: pointer;
+      transition: all 300ms;
+      animation: show-item 1s ease-in-out forwards;
+      visibility: hidden;
+    }
+
+    .menu-item:hover {
+      transform: translateY(-12px);
+      box-shadow: 0px 2px 6px -1px #000;
+    }
+
+    .menu-item img {
+      width: 320px;
+    }
+
+    .price {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+      font-weight: 500;
+      font-size: 1.25rem;
+    }
+
+    .price p {
+      color: var(--primary);
+    }
+
+    .menu-text {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    @keyframes show-item {
+      from {
+        opacity: 0;
+        transform: translateY(100%);
+        visibility: hidden;
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+      }
+    }
+  </style>
+  <body>
+    <header>
+      <img src="./assets/logo.png" alt="Logo" />
+    </header>
+
+    <main>
+      <section class="category-menu">
+        <div class="category active">
+          <img src="./assets/burger-icon.png" alt="Burger Icon" />
+          <p>Burger</p>
+        </div>
+
+        <!-- the rest will be rendered with a script -->
+      </section>
+
+      <section id="menu-grid">
+        <!-- items will be rendered with a script -->
+      </section>
+    </main>
+
+    <footer style="display: flex; justify-content: center; margin-top: 1rem">
+      <img
+        src="./assets/powered-by.png"
+        alt="Powered By eatic"
+        style="width: 150px"
+      />
+    </footer>
+
+    <script>
+      const menuItems = [
+        {
+          title: "Buffalo Burger",
+          ingredients: "meat Stick, tomato, cheese, sauces",
+          discount: 75,
+          price: 100,
+          img: "./assets/burger.png",
+        },
+        {
+          title: "Buffalo Burger",
+          ingredients: "meat Stick, tomato, cheese, sauces",
+          discount: 75,
+          price: 100,
+          img: "./assets/burger.png",
+        },
+        {
+          title: "Buffalo Burger",
+          ingredients: "meat Stick, tomato, cheese, sauces",
+          discount: 75,
+          price: 100,
+          img: "./assets/burger.png",
+        },
+        {
+          title: "Buffalo Burger",
+          ingredients: "meat Stick, tomato, cheese, sauces",
+          discount: 75,
+          price: 100,
+          img: "./assets/burger.png",
+        },
+        {
+          title: "Buffalo Burger",
+          ingredients: "meat Stick, tomato, cheese, sauces",
+          discount: 75,
+          price: 100,
+          img: "./assets/burger.png",
+        },
+        {
+          title: "Buffalo Burger",
+          ingredients: "meat Stick, tomato, cheese, sauces",
+          discount: 75,
+          price: 100,
+          img: "./assets/burger.png",
+        },
+        {
+          title: "Buffalo Burger",
+          ingredients: "meat Stick, tomato, cheese, sauces",
+          discount: 75,
+          price: 100,
+          img: "./assets/burger.png",
+        },
+        {
+          title: "Buffalo Burger",
+          ingredients: "meat Stick, tomato, cheese, sauces",
+          discount: 75,
+          price: 100,
+          img: "./assets/burger.png",
+        },
+        {
+          title: "Buffalo Burger",
+          ingredients: "meat Stick, tomato, cheese, sauces",
+          discount: 75,
+          price: 100,
+          img: "./assets/burger.png",
+        },
+        {
+          title: "Buffalo Burger",
+          ingredients: "meat Stick, tomato, cheese, sauces",
+          discount: 75,
+          price: 100,
+          img: "./assets/burger.png",
+        },
+        {
+          title: "Buffalo Burger",
+          ingredients: "meat Stick, tomato, cheese, sauces",
+          discount: 75,
+          price: 100,
+          img: "./assets/burger.png",
+        },
+      ];
+
+      const menuContainer = document.getElementById("menu-grid");
+
+      const renderMenuItems = () => {
+        menuItems.forEach((item, idx) => {
+          const menuItem = document.createElement("div");
+          menuItem.className = "menu-item";
+          menuItem.style.animationDelay = `${idx * 300}ms`;
+          menuItem.innerHTML = `
+            <img src="${item.img}" alt="${item.title}" />
+            <div class="menu-text">
+              <h3>${item.title}</h3>
+              <p>${item.ingredients}</p>
+              <div class="price">
+                <p>${item.discount} Egp</p>
+                <del>${item.price} EGP</del>
+              </div>
+            </div>
+          `;
+          menuContainer.appendChild(menuItem);
+        });
+      };
+
+      renderMenuItems();
+
+      const renderCategories = () => {
+        for (let i = 0; i < 10; i++) {
+          document.querySelector(
+            ".category-menu"
+          ).innerHTML += `<div class="category">
+          <img src="./assets/pizza-icon.png" alt="Pizza Icon" />
+          <p>Pizza</p>
+        </div>`;
+        }
+      };
+
+      renderCategories();
+    </script>
+  </body>
+</html>
